@@ -38,7 +38,7 @@ async function main() {
       logToFile(page, `PAGE`);
       console.log(`=+=+=+=+=page ${page}=+=+=+=+=`);
       const url = `${baseURL}/direktori/index/pengadilan/pn-jakarta-barat/kategori/perdata-1/tahunjenis/putus/tahun/${year}/page/${page}.html`;
-      const totalDoc = 0;
+      let totalDoc = 0;
       try {
         const listResp = await httpClient.get(url);
         const listHtmlContent = listResp.data;
