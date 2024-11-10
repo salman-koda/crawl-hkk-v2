@@ -74,12 +74,10 @@ async function main() {
 
           let fileName = null;
           // Get title
-          $detailHtmlContent("h1").each(async (_, element) => {
-            const name = $detailHtmlContent(element).text();
-            if (name) {
-              fileName = `${snakeCase(name)}.pdf`;
-            }
-          });
+          const name = $detailHtmlContent("h1").first().text();
+          if (name) {
+            fileName = `${snakeCase(name)}.pdf`;
+          }
 
           // Get all pdf urls on this page
           $detailHtmlContent("a").each(async (_, element) => {
